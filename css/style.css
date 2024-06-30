@@ -12,7 +12,20 @@
   font-weight: 800;
   font-style: normal;
 }
+:root {
+  --Soft-Cyan: hsl(174, 77%, 80%);
+  --Strong-Cyan: hsl(174, 86%, 45%);
+  --Ligh-Grayish-Red: hsl(14, 92%, 95%);
+  --Ligh-Red: hsl(15, 100%, 70%);
+  --Pale-Blue: hsl(226, 100%, 87%);
 
+  --White: hsl (0, 0%, 100%);
+  --Very-Pale-Blue: hsl(230, 100%, 99%);
+  --Ligh-Grayish-Blue: hsl(224, 65%, 95%);
+  --Ligh-Grayish-Blue: hsl(223, 50%, 87%);
+  --Grayish-Blue: hsl(225, 20%, 60%);
+  --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+}
 body {
   min-height: 100vh;
   min-height: 100svh;
@@ -20,10 +33,20 @@ body {
   place-content: center;
   align-items: center;
   font-size: 15px;
+
+  background: url("../images/bg-pattern.svg") no-repeat;
 }
 
 main {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.8rem;
+}
+
+.card {
+  background-color: var(--White);
 }
 
 .heading {
