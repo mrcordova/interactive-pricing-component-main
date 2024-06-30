@@ -34,6 +34,7 @@ main {
   background: url("../images/pattern-circles.svg") no-repeat center;
 
   gap: 0.5rem;
+  padding-block: 2rem;
 }
 
 .heading > h1 {
