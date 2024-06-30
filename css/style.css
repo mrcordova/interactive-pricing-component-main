@@ -49,7 +49,9 @@ main {
 .card {
   background-color: var(--White);
 
+  border-radius: 0.5rem;
   padding-block: 2.2rem;
+  box-shadow: 0px 0px 20px 20px var(--Very-Pale-Blue);
   /* background-color: white; */
 }
 .pageviews {
@@ -107,23 +109,37 @@ label[for="slider"] > span:last-child {
 ul {
   /* text-align: left; */
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
+  padding-block-end: 1.8rem;
   color: var(--Grayish-Blue);
   font-size: 0.75rem;
   list-style-position: inside;
   list-style-type: none;
   list-style-image: url("../images/icon-check.svg");
 }
+ul,
 li {
-  /* text-indent: 3rem; */
+  list-style-type: none;
 }
 .list-container {
   border-top: 0.05rem solid var(--Ligh-Grayish-Blue);
   padding-block-start: 1.45rem;
 }
+.start-btn {
+  color: var(--Ligh-Grayish-Blue);
+  background-color: var(--Dark-Desaturated-Blue);
+  font-size: 0.75rem;
+  padding-inline: 2.9rem;
+  padding-block: 0.8rem;
+  border-radius: 2rem;
+}
 
+.start-btn:hover {
+  cursor: pointer;
+}
 /* The switch - the box around the slider */
 .switch {
   position: relative;
