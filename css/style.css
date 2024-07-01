@@ -49,10 +49,13 @@ main {
 .card {
   background-color: var(--White);
 
-  border-radius: 0.5rem;
-  padding-block: 2.2rem;
   box-shadow: 0px 0px 20px 20px var(--Very-Pale-Blue);
-  /* background-color: white; */
+  /* Mobile */
+  /* border-radius: 0.5rem; */
+  /* padding-block: 2.2rem; */
+  /* Desktop */
+  border-radius: 0.5rem;
+  padding-block: 3.5rem 2.7rem;
 }
 .pageviews {
   color: var(--Dark-Desaturated-Blue);
@@ -63,7 +66,8 @@ main {
   /* Desktop */
   font-size: 0.95rem;
   letter-spacing: 0.09rem;
-  margin-block-end: 1.5rem;
+
+  margin-block-start: 1rem;
 }
 .heading {
   display: flex;
@@ -100,11 +104,12 @@ main {
 }
 
 .slider-container {
-  /* display: flex; */
-  /* flex-direction: column; */
-  padding-inline: 1.6rem 1.6rem;
+  /* Mobile */
+  /* padding-inline: 1.6rem 1.6rem; */
+  /* padding-block-end: 1.95rem; */
+  /* Desktop */
+  padding-inline: 0.4rem 0.1rem;
   padding-block-end: 1.95rem;
-  /* gap: 1.3rem; */
 }
 
 label[for="slider"] {
@@ -112,6 +117,10 @@ label[for="slider"] {
   justify-content: center;
   align-items: center;
   padding-inline: 3.3rem;
+
+  /* Desktop */
+  padding-inline: 7rem 0rem;
+  padding-block-end: 4rem;
 }
 label[for="slider"] > span:first-child {
   color: var(--Dark-Desaturated-Blue);
@@ -323,7 +332,9 @@ input[type="range"]::-moz-range-track {
   padding-block-end: 2.3rem;
   gap: 1rem;
 }
-
+.desktop-grid {
+  padding-inline: 2.8rem;
+}
 @media (min-width: 35rem) {
   .heading > p {
     width: 39ch;
