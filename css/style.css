@@ -67,18 +67,30 @@ main {
   text-align: center;
   background: url("../images/pattern-circles.svg") no-repeat center;
 
-  gap: 0.5rem;
+  /* Mobile */
+  /* gap: 0.5rem; */
+  /* padding-block: 2rem; */
+  /* Desktop */
+  gap: 0.4rem;
   padding-block: 2rem;
 }
 
 .heading > h1 {
-  font-size: 1.28rem;
+  /* Mobile */
+  /* font-size: 1.28rem; */
+  /* Desktop */
+  font-size: 1.8rem;
 }
 
 .heading > p {
   color: var(--Grayish-Blue);
-  font-size: 0.82rem;
-  width: 22ch;
+  /* Mobile */
+  /* font-size: 0.82rem; */
+  /* width: 22ch; */
+  /* line-height: 1.8; */
+  /* Desktop */
+  font-size: 0.94rem;
+
   line-height: 1.8;
 }
 
@@ -292,6 +304,9 @@ input[type="range"]::-moz-range-track {
 }
 
 @media (min-width: 35rem) {
+  .heading > p {
+    width: 39ch;
+  }
   .list-container {
     flex-direction: row;
   }
