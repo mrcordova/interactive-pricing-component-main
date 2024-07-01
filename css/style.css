@@ -165,7 +165,7 @@ li {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--Ligh-Grayish-Blue);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   width: 2.7rem;
@@ -185,11 +185,11 @@ li {
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--Strong-Cyan);
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+input:hover + .slider {
+  background-color: var(--Soft-Cyan);
 }
 
 input:checked + .slider:before {
@@ -244,6 +244,10 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   box-shadow: 1px 12px 20px 4px var(--Strong-Cyan);
 }
+
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.5rem;
@@ -259,6 +263,9 @@ input[type="range"]::-moz-range-thumb {
     var(--Strong-Cyan);
   cursor: pointer;
   box-shadow: 1px 12px 20px 4px var(--Strong-Cyan);
+}
+input[type="range"]::-moz-range-thumb:active {
+  cursor: grabbing;
 }
 
 input[type="range"]::-moz-range-track {

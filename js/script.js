@@ -41,11 +41,6 @@ const updateSlider = () => {
     inputSlider.style = `background: linear-gradient(to left, ${lightGrayishBlue},  ${lightGrayishBlue} ${rightSide}%, ${softCyan} ${leftSide}%, ${softCyan}`;
   }
 
-  //   const pageViewsAmount = e.currentTarget.parentElement.previousElementSibling;
-  //   const monthlyAmount =
-  //     e.currentTarget.nextElementSibling.querySelector("span");
-  //   console.log(leftSide);
-  //   console.log(Math.floor(leftSide));
   updatePageViews(leftSide);
   updateMonthlyAmount(leftSide);
 };
