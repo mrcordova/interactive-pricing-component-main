@@ -290,12 +290,12 @@ input[type="range"]::-moz-range-track {
   align-items: center;
   justify-content: center;
   gap: clamp(0.8rem, 0.7296rem + 0.3005vw, 1rem);
+  margin-inline-start: clamp(0rem, -0.7042rem + 3.0047vw, 2rem);
 
-  margin-inline-start: 2rem;
   padding-block-end: 2.3rem;
 }
 .desktop-grid {
-  padding-inline: 2.8rem;
+  padding-inline: clamp(0rem, -0.9859rem + 4.2066vw, 2.8rem);
 }
 @media (min-width: 35rem) {
   .heading > p {
