@@ -1,5 +1,7 @@
 const inputSlider = document.getElementById("slider");
 const toggleDiscount = document.querySelector("input[type=checkbox]");
+const pageViews = document.querySelector(".pageviews");
+const monthlyAmount = document.querySelector("label[for='slider']>span");
 let discount = 1;
 const max = parseInt(inputSlider.max);
 const monthlyCharges = {
@@ -14,37 +16,42 @@ const monthlyCharges = {
   88: ["24.00", "500k"],
   100: ["36.00", "1M"],
 };
-// - 10K pageviews / $8 per month
-// - 50K pageviews / $12 per month
-// - 100K pageviews / $16 per month
-// - 500k pageviews / $24 per month
-// - 1M pageviews / $36 per month
-inputSlider.addEventListener("input", (e) => {
-  const style = getComputedStyle(document.body);
-  const softCyan = style.getPropertyValue("--Soft-Cyan");
-  const lightGrayishBlue = style.getPropertyValue("--Ligh-Grayish-Blue");
-  const leftSide = (e.currentTarget.value / max) * 100;
-  const rightSide = 100 - leftSide;
-
-  if (leftSide > 50.0) {
-    e.currentTarget.style = `background: linear-gradient(to right, ${softCyan}, ${softCyan} ${leftSide}% , ${lightGrayishBlue} ${rightSide}%, ${lightGrayishBlue}`;
-  } else {
-    e.currentTarget.style = `background: linear-gradient(to left, ${lightGrayishBlue},  ${lightGrayishBlue} ${rightSide}%, ${softCyan} ${leftSide}%, ${softCyan}`;
-  }
-
-  const pageViewsAmount = e.currentTarget.parentElement.previousElementSibling;
-  const monthlyAmount =
-    e.currentTarget.nextElementSibling.querySelector("span");
-  //   console.log(leftSide);
-  //   console.log(Math.floor(leftSide));
-  pageViewsAmount.textContent = `${
+const updatePageViews = (leftSide) => {
+  pageViews.textContent = `${
     monthlyCharges[Math.floor(leftSide)][1]
   } PAGEVIEWS`;
+};
+
+const updateMonthlyAmount = (leftSide) => {
   monthlyAmount.textContent = `$${
     parseInt(monthlyCharges[Math.floor(leftSide)][0]) * discount
   }.00`;
-});
+};
+
+const updateSlider = () => {
+  const style = getComputedStyle(document.body);
+  const softCyan = style.getPropertyValue("--Soft-Cyan");
+  const lightGrayishBlue = style.getPropertyValue("--Ligh-Grayish-Blue");
+  const leftSide = (inputSlider.value / max) * 100;
+  const rightSide = 100 - leftSide;
+
+  if (leftSide > 50.0) {
+    inputSlider.style = `background: linear-gradient(to right, ${softCyan}, ${softCyan} ${leftSide}% , ${lightGrayishBlue} ${rightSide}%, ${lightGrayishBlue}`;
+  } else {
+    inputSlider.style = `background: linear-gradient(to left, ${lightGrayishBlue},  ${lightGrayishBlue} ${rightSide}%, ${softCyan} ${leftSide}%, ${softCyan}`;
+  }
+
+  //   const pageViewsAmount = e.currentTarget.parentElement.previousElementSibling;
+  //   const monthlyAmount =
+  //     e.currentTarget.nextElementSibling.querySelector("span");
+  //   console.log(leftSide);
+  //   console.log(Math.floor(leftSide));
+  updatePageViews(leftSide);
+  updateMonthlyAmount(leftSide);
+};
+inputSlider.addEventListener("input", updateSlider);
 
 toggleDiscount.addEventListener("click", (e) => {
   discount = e.currentTarget.checked ? 0.75 : 1;
+  updateSlider();
 });
